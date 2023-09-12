@@ -87,7 +87,8 @@ function genererListe(_data){
         let monOption = new Option();
 
             monOption.value = maCompagnie.airline_name;
-            monOption.innerText = maCompagnie.flight_id;
+            monOption.innerText = maCompagnie.flight_id +"Compagnie: "+ maCompagnie.airline_name;
+            
     }
 }
 
