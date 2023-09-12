@@ -1,8 +1,5 @@
 let container = [];
-// let monheure = new Date();
-// let hrs = monheure.getHours();
-// let min = monheure.getMinutes();
-// let sec = monheure.getSeconds();
+
 
 
 
@@ -77,6 +74,20 @@ function fillTable(_data){
 
         }     
         
+    }
+}
+
+function genererListe(_data){
+
+    container = _data;
+    for(let i = 0; i > _data.length; i++){
+
+        let maCompagnie = _data[i];
+
+        let monOption = new Option();
+
+            monOption.value = maCompagnie.airline_name;
+            monOption.innerText = maCompagnie.flight_id;
     }
 }
 
