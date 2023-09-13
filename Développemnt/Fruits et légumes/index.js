@@ -42,14 +42,14 @@ function fillTable(_data){
                     let monButton = document.createElement("input");
                     monButton.setAttribute("type", "button");
                     monButton.setAttribute("class", "btn btn-link");
-                    monButton.setAttribute("id", "btn_edite" + monObjet.Name);
+                    monButton.setAttribute("id", "btn_edite" + monObjet.Id);
                     monButton.value = "Editer";
                     macellule5.appendChild(monButton);
 
                     let monBtn = document.createElement("input");
                     monBtn.setAttribute("type", "button");
                     monBtn.setAttribute("class", "btn btn-link");
-                    monBtn.setAttribute("id", "btn_supprimer" + monObjet.Name);
+                    monBtn.setAttribute("id", "btn_supprimer" + monObjet.Id);
                     monBtn.value = "Supprimer";
                     macellule5.appendChild(monBtn);
                     break;
@@ -57,25 +57,35 @@ function fillTable(_data){
                 fault:
                     break;
 
-                    monButton = document.querySelector("btn_edite" + monObjet.Name);
+                    monButton = document.querySelector("btn_edite" + monObjet.Id);
                     monButton.addEventListener("click", function(){
-                            let editligne = document.querySelector("#ligne"+ monObjet.Name);
+                            let editligne = document.querySelector("#ligne"+ monObjet.Id);
                             editligne.remove;
-                    })
+                    });
 
-                    monBtn = document.querySelector("btn_supprime"+ monObjet.Name);
+                    monBtn = document.querySelector("btn_supprime"+ monObjet.Id);
                     monBtn.addEventListener("click", function(){
-                        let deleteligne = document.querySelector("#ligne"+ monObjet.Name);
+                        let deleteligne = document.querySelector("#ligne"+ monObjet.Id);
                         deleteligne.remove;
-                    } )
-
-                   
-
+                    }); 
             }
-
         }
     }
 }
+
+function trieCroissant() {
+    let trieCroi = container.sort((a,b) => a.Name - b.Name);
+    return trieCroi;
+}
+
+document.querySelector("#trie").addEventListener("click", function(){
+    let trieCroiss = trieCroissant();
+    let montab = document.querySelector("#body");
+    montab.remove;
+    fillTable(trieCroiss);
+    
+})
+
 
 fetch("legumos.json")
 .then(response => response.json())
