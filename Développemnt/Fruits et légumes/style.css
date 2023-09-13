@@ -36,3 +36,18 @@ li a:hover:not(.active) {
     background-color: #8dac8e;
 }
 
+#legu{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+th{
+    border-width: 5px;
+    border-color: white;
+    background-color: green;
+    color: yellowgreen;
+}

@@ -32,10 +32,45 @@ function fillTable(_data){
                 case 3:
                     let macellule3 = maligne.insertCell();
                     macellule3.innerText = monObjet.LifeTime;
+                    break;
                 case 4:
                     let macellule4 = maligne.insertCell();
                     macellule4.innerText = monObjet.Fresh;
-                    
+                    break;
+                case 5:
+                    let macellule5 = maligne.insertCell();
+                    let monButton = document.createElement("input");
+                    monButton.setAttribute("type", "button");
+                    monButton.setAttribute("class", "btn btn-link");
+                    monButton.setAttribute("id", "btn_edite" + monObjet.Name);
+                    monButton.value = "Editer";
+                    macellule5.appendChild(monButton);
+
+                    let monBtn = document.createElement("input");
+                    monBtn.setAttribute("type", "button");
+                    monBtn.setAttribute("class", "btn btn-link");
+                    monBtn.setAttribute("id", "btn_supprimer" + monObjet.Name);
+                    monBtn.value = "Supprimer";
+                    macellule5.appendChild(monBtn);
+                    break;
+
+                fault:
+                    break;
+
+                    monButton = document.querySelector("btn_edite" + monObjet.Name);
+                    monButton.addEventListener("click", function(){
+                            let editligne = document.querySelector("#ligne"+ monObjet.Name);
+                            editligne.remove;
+                    })
+
+                    monBtn = document.querySelector("btn_supprime"+ monObjet.Name);
+                    monBtn.addEventListener("click", function(){
+                        let deleteligne = document.querySelector("#ligne"+ monObjet.Name);
+                        deleteligne.remove;
+                    } )
+
+                   
+
             }
 
         }
