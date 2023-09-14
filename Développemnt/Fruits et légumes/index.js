@@ -15,7 +15,7 @@ function fillTable(_data){
         let monObjet = _data[i];
         maligne.setAttribute("id", "ligne" + monObjet.Id);
 
-        for(let i = 0; i < 7; i++){
+        for(let i = 0; i < 6; i++){
             switch (i){
                 case 0:
                     let macellule = maligne.insertCell();
@@ -45,6 +45,11 @@ function fillTable(_data){
                     monButton.setAttribute("id", "btn_edite" + monObjet.Id);
                     monButton.value = "Editer";
                     macellule5.appendChild(monButton);
+                    monButton.addEventListener("click", function(){
+                        console.log("ok");
+                            let editligne = document.querySelector("#ligne"+ monObjet.Id);
+                            editligne.replace();
+                    });
 
                     let monBtn = document.createElement("input");
                     monBtn.setAttribute("type", "button");
@@ -52,38 +57,47 @@ function fillTable(_data){
                     monBtn.setAttribute("id", "btn_supprimer" + monObjet.Id);
                     monBtn.value = "Supprimer";
                     macellule5.appendChild(monBtn);
-                    break;
-
-                fault:
-                    break;
-
-                    monButton = document.querySelector("btn_edite" + monObjet.Id);
-                    monButton.addEventListener("click", function(){
-                            let editligne = document.querySelector("#ligne"+ monObjet.Id);
-                            editligne.remove;
-                    });
-
-                    monBtn = document.querySelector("btn_supprime"+ monObjet.Id);
                     monBtn.addEventListener("click", function(){
                         let deleteligne = document.querySelector("#ligne"+ monObjet.Id);
-                        deleteligne.remove;
+                        deleteligne.remove();
                     }); 
+                    break;
+
+                default:
+                    break;
+
+                    
             }
         }
     }
 }
 
 function trieCroissant() {
-    let trieCroi = container.sort((a,b) => a.Name - b.Name);
-    return trieCroi;
-}
-
-document.querySelector("#trie").addEventListener("click", function(){
-    let trieCroiss = trieCroissant();
+    let sortie= container.sort((a,b) => a.Name - b.Name);
+    console.log(sortie);
+    return sortie;
+   } 
+    document.querySelector("#trie").addEventListener("click", function(){
+    let reservoire = trieCroissant();
     let montab = document.querySelector("#body");
     montab.remove;
-    fillTable(trieCroiss);
+    fillTable(reservoire);
     
+})
+
+
+
+function trieDecroissant() {
+    let sortie = container.sort((b, a) => b.Name - a.Name);
+    console.log(sortie);
+    return sortie;
+}
+
+document.querySelector("#trie").addEventListener("dblclick", function(){
+    let reservoire = trieDecroissant();
+    let montab = document.querySelector("#body");
+    montab.remove();
+    fillTable(reservoire);
 })
 
 
@@ -91,3 +105,4 @@ fetch("legumos.json")
 .then(response => response.json())
 .then(response => fillTable(response))
 .catch(error => alert("Erreur ; " + error));
+

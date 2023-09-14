@@ -5,37 +5,15 @@ img {
    width: 100%;
    border-style: solid;
 }
+
 ul {
+     padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     background-color: green;
-}
-
-.vente{
-    display: flex;
-
-    
-    
-}
-
-.legume{
-    display: flex;
-    flex-wrap: nowrap;
-    
-   
-    
-}
-
-li {
-    float: left;
-    border-right:1px solid #bbb;
-}
-
-li:last-child {
-    border-right: none;
-}
+} 
 
 li a {
     display: block;
@@ -50,8 +28,40 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #8dac8e;
+    background-color: #4CAF50;
 }
+
+.item1{
+    
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: yellowgreen;
+
+}
+
+.item2{
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.active{
+    margin-left: 300px;
+}
+
+.new{
+    margin-right: 500px;
+}
+
+.legumes{
+    margin-right: 30px ;
+}
+
+.new_legume{
+    margin-right: 500px;
+}
+
 
 #legu{
     position: relative;
