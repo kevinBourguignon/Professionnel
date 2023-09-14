@@ -1,0 +1,13 @@
+body {
+    background: #111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cube {
+    margin: 200px auto 0;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
