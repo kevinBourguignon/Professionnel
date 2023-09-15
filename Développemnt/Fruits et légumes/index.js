@@ -48,7 +48,7 @@ function fillTable(_data){
                     monButton.addEventListener("click", function(){
                         console.log("ok");
                             let editligne = document.querySelector("#ligne"+ monObjet.Id);
-                            editligne.replace();
+                           
                     });
 
                     let monBtn = document.createElement("input");
