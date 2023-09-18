@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie 1: Chapitre 3 - Vue Mart</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue Mart</h1>
+
+        <h2>Panier d'achat</h2>
+        <ul>
+            <li>Pommes: {{ costOfApples }}€</li>
+            <li>Bananes: {{ costOfBananas }}€</li>
+            <li>Noix de coco: {{ costOfCoconuts }}€</li>
+        </ul>
+        <p>Total: {{ costOfApples + costOfBananas + costOfCoconuts }}€</li>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                costOfApples: 5,
+                costOfBananas: 2,
+                costOfCoconuts: 8,
+            }
+        });
+    </script>
+    
+</body>
+</html>
