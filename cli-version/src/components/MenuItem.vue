@@ -3,7 +3,10 @@ export default {
   name: "MenuItem",
   props: ["addToShoppingCart", "image", "inStock", "name", "quantity"]
 }
+
+
 </script>
+
 
 <template>
         <div class="menu-item">
@@ -14,7 +17,7 @@ export default {
                 <p v-else>En rupture de stock</p>
                 <div>
                         <label for="add-item-quantity">Quantité : {{ quantity }}</label>
-                        <input v-model.number="quantity" type="number" id="add-item-quantity" />
+                        <input v-model.number="quantity" id="add-item-quantity" type="number" />
                         <button @click="addToShoppingCart(quantity)">
                                   Ajouter au panier
                         </button>
@@ -24,7 +27,6 @@ export default {
 </div>
         
 </template>
-
 
 
 
